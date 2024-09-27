@@ -4,6 +4,7 @@ function App() {
   return (
     <>
     Hello
+    { new Date().toISOString() }
       {JSON.stringify(window.initData)}
     </>
   )
