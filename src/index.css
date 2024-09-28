@@ -8,10 +8,11 @@
 
 h2 {
   position: absolute;
-  left: 50%;
-  top: 0%;
-  opacity: 0.04;
-  transform: translate(-48%, -50%);
+  
+  bottom: -180px;
+  right: -150px;
+  opacity: 0.4;
+  
   font-size: 450px;
   font-weight: bold;
   color: black;
@@ -22,19 +23,31 @@ h2 {
 body, html {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: Inter, sans-serif!important;
+  font: normal 400 16px/1em Inter, sans-serif!important;
   min-height: 100vh;
   max-height: 100vh;
   height: 100%;
   overflow: hidden;
   background-color: #8a7bff;
 }
+
+.logo {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  width: 150px;
+  height: 90px;
+  padding: 0;
+  z-index: 1000;
+}
+
 .container {
-  padding: 40px 100px;
+  padding: 80px 120px;
   background-color: white;
   border-radius: 20px;
   margin: 20px;
-  height: calc(100vh - 180px);
+  height: calc(100vh - 270px);
   position: relative;
   overflow: hidden;
   display: flex;

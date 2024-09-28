@@ -7,6 +7,8 @@ import remarkGfm from "remark-gfm";
 import { BlockMath, InlineMath } from "react-katex";
 import "katex/dist/katex.min.css";
 
+import logo from './assets/Tavus Platform Logo.svg';
+
 const _mapProps = (props) => ({
   ...props,
   remarkPlugins: [remarkMath, [remarkGfm, { singleTilde: false }]],
@@ -89,7 +91,8 @@ $$
   return (
     <>
     <div className="container">
-      <h2>Tavus</h2>
+      <h2>🦚</h2>
+      <img className="logo" src={logo} alt="Tavus Platform Logo" />
         <div className="canvas"></div>
         <div className="toolbar">
             <button>
