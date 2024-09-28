@@ -11,7 +11,7 @@ h2 {
   
   bottom: -180px;
   right: -150px;
-  opacity: 0.4;
+  opacity: 0.05;
   
   font-size: 450px;
   font-weight: bold;
@@ -53,6 +53,7 @@ body, html {
   display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
 .toolbar {
   position: absolute;

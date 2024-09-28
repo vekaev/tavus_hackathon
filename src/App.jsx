@@ -23,6 +23,9 @@ const Markdown = (props) => <ReactMarkdown {..._mapProps(props)} />;
 
 function App() {
   const data = window.initData || {
+    content: '',
+    content_type: 'latex',
+  } || {
     content_type: 'latex',
     content: `
 $$
@@ -91,7 +94,7 @@ $$
   return (
     <>
     <div className="container">
-      <h2>🦚</h2>
+      <h2>Tavus</h2>
       <img className="logo" src={logo} alt="Tavus Platform Logo" />
         <div className="canvas"></div>
         <div className="toolbar">
