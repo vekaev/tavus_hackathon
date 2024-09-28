@@ -8,6 +8,9 @@ import { BlockMath, InlineMath } from "react-katex";
 import "katex/dist/katex.min.css";
 
 import logo from './assets/Tavus Platform Logo.svg';
+import peacock from './assets/peacock.png';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+
 
 const _mapProps = (props) => ({
   ...props,
@@ -15,7 +18,8 @@ const _mapProps = (props) => ({
   rehypePlugins: [rehypeKatex],
   components: {
     math: ({ value }) => <BlockMath>{value}</BlockMath>,
-    inlineMath: ({ value }) => <InlineMath>{value}</InlineMath>
+    inlineMath: ({ value }) => <InlineMath>{value}</InlineMath>,
+    code: (props) => <SyntaxHighlighter language={props.language}>{props.value}</SyntaxHighlighter>
   }
 });
 
@@ -23,7 +27,16 @@ const Markdown = (props) => <ReactMarkdown {..._mapProps(props)} />;
 
 function App() {
   const data = window.initData || {
-    content: '',
+    content: `python
+# Function to print the multiplication table from 1 to 10
+def print_multiplication_table():
+for i in range(1, 11):
+for j in range(1, 11):
+print(f"{i} x {j} = {i * j}")
+print() # Newline for better readability
+
+# Call the function to print the table
+print_multiplication_table()`,
     content_type: 'latex',
   } || {
     content_type: 'latex',
@@ -94,7 +107,7 @@ $$
   return (
     <>
     <div className="container">
-      <h2>Tavus</h2>
+      <h2><img style={{width: '400px'}} src={peacock} alt="Peacock" /></h2>
       <img className="logo" src={logo} alt="Tavus Platform Logo" />
         <div className="canvas"></div>
         <div className="toolbar">
@@ -159,7 +172,7 @@ $$
             </button>
         </div>
         {/* <div className="avatar">JD</div> */}
-        <div className="content"><Markdown>{data.content}</Markdown></div>
+        <div className="content" ><Markdown>{data.content}</Markdown></div>
     </div>
     </>
   )
